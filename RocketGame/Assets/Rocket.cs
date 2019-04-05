@@ -52,7 +52,7 @@ public class Rocket : MonoBehaviour
 
     private void Rotate()
     {
-           
+
 
         rigidbody.freezeRotation = true;
 
@@ -65,15 +65,26 @@ public class Rocket : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.D))
         {
- 
+
             transform.Rotate(-Vector3.forward * rotationThisFrame);
 
         }
-        
-        rigidbody.freezeRotation = false;
 
+        rigidbody.freezeRotation = false;
 
     }
 
-    
+
+    void OnCollisionEnter(Collision collision)
+    {
+        switch (collision.gameObject.tag)
+        {
+            case "Friendly":
+                print ("OK");
+                break;
+            default:
+                print ("Dead");
+                break;
+        }
+    }
 }
