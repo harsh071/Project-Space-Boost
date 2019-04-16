@@ -10,7 +10,12 @@ PrefabInstance:
     - target: {fileID: 8459106975697193116, guid: 382ae7d229ca58249aa98efce26a92ef,
         type: 3}
       propertyPath: m_Name
-      value: Obstacle1
+      value: Obstacle1 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8459106975697193116, guid: 382ae7d229ca58249aa98efce26a92ef,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 210757539384331574, guid: 382ae7d229ca58249aa98efce26a92ef,
         type: 3}

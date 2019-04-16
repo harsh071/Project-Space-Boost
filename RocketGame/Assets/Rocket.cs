@@ -1,6 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using UnityEngine.SceneManagement;
+
 using UnityEngine;
 
 public class Rocket : MonoBehaviour
@@ -12,7 +11,7 @@ public class Rocket : MonoBehaviour
     AudioSource audioSource;
     [SerializeField] float rcsThrust = 100f;
     [SerializeField] float mainThrust = 100f;
-
+    
 
     void Start()
     {
@@ -77,13 +76,21 @@ public class Rocket : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        
         switch (collision.gameObject.tag)
         {
+        
             case "Friendly":
-                print ("OK");
+                
+                
+                break;
+            case "Finish":
+           
+                    SceneManager.LoadScene(1);
+                
                 break;
             default:
-                print ("Dead");
+                SceneManager.LoadScene(0);
                 break;
         }
     }
